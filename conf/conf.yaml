@@ -1,0 +1,66 @@
+server:
+  ip: 0.0.0.0
+  port: "7999"
+model:
+  llmHost: https://brain.thundersoft.com
+  llmAuthToken: sk-8UCZAu7tciATCDKdE09b8509335a48009e780eFb4eDf9d5a
+  name: rubik-chat-digital
+
+elastic:
+  host: 10.0.232.20
+  port: "9200"
+  index: email_20240509
+  username: elastic
+  password: U6xT2NkcEQ10a
+
+embedding:
+  #address: http://10.0.232.20:7158/api/embedding/v1/embeddings
+  #address: https://brain.thundersoft.com/embedding/api/embedding/v1/embeddings
+
+  #embedding_server: "http://127.0.0.1:7158/api/embedding/v1/embeddings"
+  address: "http://10.0.232.27:7158/api/embedding/v1/embeddings"
+  model_name: "bge-large-zh"
+  authorization: "sk-21761AD3AC754C91B9D852337F991A16UUHWF2NY7CCDFF12"
+milvus:
+  address: 10.0.80.33:19530
+  dbName: knowledge_20240131
+  collectionName: KnowledgeCollection_1001
+  dim: 1024
+  user: "minioadmin"
+  password: "minioadmin"
+  datasetIds: "1806220771614416898"
+juShi:
+  url: https://brain.thundersoft.com/brain/billing/v1/api/proxy
+  #url: https://rubikgpt.thundersoft.com/brain/billing/v1/api/proxy
+  model_name: "rejection_model"
+  authorization: "sk-21761AD3AC754C91B9D852337F991A16UUHWF2NY7CCDFF12"
+nacos:
+  host: 10.0.12.85
+  port: 8848
+nlu:
+  host: http://10.0.80.30:8113/brain/api/action
+mysql:
+  host: 10.0.80.33
+  port: 3306
+  username: root
+  password: "thundersoft88"
+  dbName: "visiting"
+flyBook:
+  #appId: cli_a6f0ac6877be500c
+  #appSecret: fLVMzem7cQc47zTz66RTrbFAcDz82Qao
+  appId: cli_a6f397f9e136d00b
+  appSecret: uYf53fUISSUYOQjLzn0OwfJS1hiHKA0E
+  #tokenUrl: https://open.feishu.cn/open-apis/auth/v3/tenant_access_token/internal
+  tokenUrl: https://open.larksuite.com/open-apis/auth/v3/app_access_token/internal
+  userSearchUrl: https://open.feishu.cn/open-apis/search/v1/user
+  # 根据手机号获取用户ID 用户必现在租户下
+  batchUrl: https://open.feishu.cn/open-apis/contact/v3/users/batch_get_id?user_id_type=user_id
+  # 根据用户ID获取用户信息
+  userUrl: https://open.larksuite.com/open-apis/authen/v1/access_token
+
+  # 发送机器人消息 用于预定会议成功后的通知
+  messagesUrl: https://open.feishu.cn/open-apis/im/v1/messages?receive_id_type=open_id
+  userTokenUrl: https://open.feishu.cn/open-apis/authen/v1/oidc/access_token
+  departmentIdUrl: https://open.feishu.cn/open-apis/contact/v3/users
+  departmentUrl: https://open.feishu.cn/open-apis/contact/v3/departments
+
